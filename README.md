@@ -1,1 +1,1 @@
-![alt text](http://url/to/img.png)
+![Sign Up Form](https://github.com/OlSavMe/FormikForm/blob/master/FormikScreen.png)
