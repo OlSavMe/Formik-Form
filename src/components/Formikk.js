@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
-//import { Form, Input, Title, Button } from './Theme.js';
+import './style.css';
+
 
 
 
 class Formikk extends Component {
+
     render() {
         return (
-            <div>
-                <h1>Sign Up form</h1>
+            <div className="App">
+                <h1>Sign Up Here!</h1>
                 <Formik
                     initialValues={{
                         firstName: "",
@@ -26,42 +28,44 @@ class Formikk extends Component {
                 >
                     {({ values, errors, touched }) => (
                         <Form>
-                            <div>
-                                <Field name="firstName" placeholder="First Name" />
-                                {errors.firstName && touched.firstName ? (
-                                    <div className="errors">{errors.firstName}</div>
-                                ) : null}
+                            <div className="section">
+                                <div>
+                                    <Field name="firstName" placeholder="First Name" className="field" />
+                                    {errors.firstName && touched.firstName ? (
+                                        <div className="errors">{errors.firstName}</div>
+                                    ) : null}
+                                </div>
+                                <div>
+                                    <Field name="lastName" placeholder="Last Name" className="field" />
+                                    {errors.lastName && touched.lastName ? (
+                                        <div className="errors">{errors.lastName}</div>
+                                    ) : null}
+                                </div>
+                                <div>
+                                    <Field name="email" type="email" placeholder="Email" className="field" />
+                                    {errors.email && touched.email ? (
+                                        <div className="errors">{errors.email}</div>
+                                    ) : null}
+                                </div>
+                                <div>
+                                    <Field name="password" type="password" placeholder="password" className="field" />
+                                    {errors.password && touched.password ? (
+                                        <div className="errors">{errors.password}</div>
+                                    ) : null}
+                                </div>
+                                <div>
+                                    <Field
+                                        name="confirmPassword"
+                                        type="password"
+                                        placeholder="confirmPassword"
+                                        className="field" />
+                                    {errors.confirmPassword && touched.confirmPassword ? (
+                                        <div className="errors">{errors.confirmPassword}</div>
+                                    ) : null}
+                                </div>
+                                <button type="submit">Submit</button>
+                                <pre>{JSON.stringify(values, null, 2)}</pre>
                             </div>
-                            <div>
-                                <Field name="lastName" placeholder="Last Name" />
-                                {errors.lastName && touched.lastName ? (
-                                    <div className="errors">{errors.lastName}</div>
-                                ) : null}
-                            </div>
-                            <div>
-                                <Field name="email" type="email" placeholder="Email" />
-                                {errors.email && touched.email ? (
-                                    <div className="errors">{errors.email}</div>
-                                ) : null}
-                            </div>
-                            <div>
-                                <Field name="password" type="password" placeholder="password" />
-                                {errors.password && touched.password ? (
-                                    <div className="errors">{errors.password}</div>
-                                ) : null}
-                            </div>
-                            <div>
-                                <Field
-                                    name="confirmPassword"
-                                    type="password"
-                                    placeholder="confirmPassword"
-                                />
-                                {errors.confirmPassword && touched.confirmPassword ? (
-                                    <div className="errors">{errors.confirmPassword}</div>
-                                ) : null}
-                            </div>
-                            <button type="submit">Submit</button>
-                            <pre>{JSON.stringify(values, null, 2)}</pre>
                         </Form>
                     )}
                 </Formik>
