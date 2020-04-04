@@ -3,9 +3,6 @@ import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import './style.css';
 
-
-
-
 class Formikk extends Component {
 
     render() {
